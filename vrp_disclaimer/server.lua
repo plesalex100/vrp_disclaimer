@@ -5,7 +5,7 @@ MySQL = module("vrp_mysql", "MySQL")
 vRP = Proxy.getInterface("vRP")
 vRPclient = Tunnel.getInterface("vRP","vRP_disclaimer")
 
-MySQL.createCommand("vRP/disclaimer_init", "ALTER TABLE `vrp_users` ADD `disclaimer` int(2) DEFAULT 0;")
+MySQL.createCommand("vRP/disclaimer_init", "ALTER TABLE `vrp_users` ADD IF NOT EXISTS `disclaimer` int(2) DEFAULT 0;")
 MySQL.createCommand("vRP/disclaimer_get", "SELECT `disclaimer` FROM `vrp_users` WHERE `id` = @user_id;")
 MySQL.createCommand("vRP/disclaimer_set", "UPDATE `vrp_users` SET `disclaimer` = 1 WHERE `id` = @user_id;")
 

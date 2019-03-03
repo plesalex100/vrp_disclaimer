@@ -10,7 +10,7 @@ MySQL.createCommand("vRP/disclaimer_get", "SELECT `disclaimer` FROM `vrp_users` 
 MySQL.createCommand("vRP/disclaimer_set", "UPDATE `vrp_users` SET `disclaimer` = 1 WHERE `id` = @user_id;")
 
 -- IMPORTANT: dupa primul start al server-ului comenteaza comanda de mai jos
---MySQL.query("vRP/disclaimer_init")
+MySQL.query("vRP/disclaimer_init")
 
 
 AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)

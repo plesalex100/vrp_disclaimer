@@ -34,7 +34,7 @@ AddEventHandler("disclaimer:start", function()
 end)
 
 function startTutorial()
-  Citizen.Wait(0)
+  Citizen.Wait(10000)
   local myPed = GetPlayerPed(-1)
   inTutorial = true
 
